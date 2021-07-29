@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 16:55:47 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/29 19:54:29 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/07/29 21:16:49 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,29 @@ void	ft_sort_five_elt(t_cir_dlst **head, t_cir_dlst **stack_b)
 	tail = (*head)->prev;
 	while (tmp != tail)
 	{
-		printf("head->data: %d, tmp->data: %d\n",(*head)->data, tmp->data);
-		sleep(5);
-		tmp = *head;
-		tail = (*head)->prev;
+		// printf("head->data: %d, tmp->data: %d\n",(*head)->data, tmp->data);
+		// sleep(5);
 		if (tmp->data == max || tmp->data == min)
 		{
 			while (*head != tmp)
 			{
 				ft_ra(head);
 				// sleep(5);
-				// printf("head->data: %d\n",(*head)->data);	
+				// printf("head->data: %d\n",(*head)->data);
 			}
 			ft_pb(head, stack_b);
+			tmp = *head;
+			tail = (*head)->prev;
+			continue ;
 		}
 		else if (tail->data == max || tail->data == min)
 		{
 			while (*head != tail)
 				ft_rra(head);
 			ft_pb(head, stack_b);
+			tmp = *head;
+			tail = (*head)->prev;
+			continue ;
 		}
 		tmp = tmp->next;
 		tail = tail->prev;

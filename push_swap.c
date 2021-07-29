@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:42:23 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/29 19:51:38 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/07/29 21:17:25 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	ft_fill_stack(argc, argv, &stack_a, &stack_b);
-	ft_cer_dlstprint(stack_a);
+	// ft_cer_dlstprint(stack_a);
 	// ft_sa(stack_a);
 	// ft_pb(&stack_a, &stack_b);
 	// ft_pb(&stack_a, &stack_b);
