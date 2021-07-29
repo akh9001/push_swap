@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse.c                                       :+:      :+:    :+:   */
+/*   ft_min_c_d_lst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/17 14:00:35 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/28 15:24:09 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/07/28 18:44:46 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/07/28 18:46:45 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_reverse(t_cir_dlst **stack)
+int	ft_min_circulary_dlst(t_cir_dlst **head)
 {
-	if (*stack)
-		*stack = (*stack)->prev;
-}
+	int			min;
+	t_cir_dlst	*tmp;
 
-void	ft_rrr(t_cir_dlst **stack_a, t_cir_dlst **stack_b)
-{
-	ft_reverse(stack_a);
-	ft_reverse(stack_b);
-	ft_putendl_fd("rrr", 1);
-}
-
-void	ft_rra(t_cir_dlst **stack)
-{
-	ft_reverse(stack);
-	ft_putendl_fd("rra", 1);
-}
-
-void	ft_rrb(t_cir_dlst **stack)
-{
-	ft_reverse(stack);
-	ft_putendl_fd("rrb", 1);
+	min = (*head)->data;
+	tmp = (*head)->next;
+	while (tmp != *head)
+	{
+		if (tmp->data < min)
+			min = tmp->data;
+		tmp = tmp->next;
+	}
+	return (min);
 }

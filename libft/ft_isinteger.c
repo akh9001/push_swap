@@ -19,9 +19,9 @@ int	ft_isinteger(char *str)
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
 	{
-		if (str[i + 1])
-			i++;
-		return (1);
+		if (!str[i + 1])
+			return (1);
+		i++;
 	}
 	while (str[i])
 	{

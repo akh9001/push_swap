@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:41:54 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/17 20:29:24 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/07/29 17:26:48 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,8 @@ void	ft_rrb(t_cir_dlst **stack);
 void	ft_fill_stack(int argc, char **argv, t_cir_dlst **a, t_cir_dlst **b);
 int		ft_check_dup_num(t_cir_dlst *stack, int num);
 void	ft_exit(t_cir_dlst **stack_a);
+int		ft_max_circulary_dlst(t_cir_dlst **head);
+void	ft_sort_three_elt(t_cir_dlst **head);
+void	ft_sort_five_elt(t_cir_dlst **head, t_cir_dlst **stack_b);
+int		ft_min_circulary_dlst(t_cir_dlst **head);
 #endif

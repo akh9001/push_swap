@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 19:12:02 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/17 20:29:17 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/07/28 15:31:24 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_fill_stack(int argc, char **argv, t_cir_dlst **a, t_cir_dlst **b)
 		{
 			if (!ft_check_dup_num(*a, num))
 			{
-				
 				ft_cer_dlstadd_back(a, ft_cer_dlstnew(num, 0));
 			}
 			else
