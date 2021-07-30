@@ -3,16 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:41:54 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/29 17:26:48 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/07/30 20:02:40 by asmaa-kh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "libft/libft.h"
+
+typedef struct s_struct
+{
+	t_cir_dlst	**head;
+	t_cir_dlst	**stack_b;
+	t_cir_dlst	*tmp;
+	t_cir_dlst	*tail;
+	int			min;
+	int			max;
+}				t_struct;
+
 
 void	ft_swap(t_cir_dlst *stack);
 void	ft_ss(t_cir_dlst *stack_a, t_cir_dlst *stack_b);

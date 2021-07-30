@@ -3,71 +3,85 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_five_num.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 16:55:47 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/29 21:16:49 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/07/31 00:00:23 by asmaa-kh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
-void	ft_sort_five_elt(t_cir_dlst **head, t_cir_dlst **stack_b)
+t_struct	ft_initize(t_cir_dlst **head, t_cir_dlst **stack_b)
 {
-	int			max;
-	int			min;
-	t_cir_dlst	*tmp;
-	t_cir_dlst	*tail;
+	t_struct	var;
 
-	max = ft_max_circulary_dlst(head);
-	min = ft_min_circulary_dlst(head);
-	tmp = *head;
-	tail = (*head)->prev;
-	while (tmp != tail)
+	var.head = head;
+	var.stack_b = stack_b;
+	var.max = ft_max_circulary_dlst(head);
+	var.min = ft_min_circulary_dlst(head);
+	var.tmp = *head;
+	var.tail = (*head)->prev;
+	return (var);
+}
+
+void	ft_push_min_max(t_struct *src, int tail)
+{
+	if (!tail)
 	{
-		// printf("head->data: %d, tmp->data: %d\n",(*head)->data, tmp->data);
-		// sleep(5);
-		if (tmp->data == max || tmp->data == min)
-		{
-			while (*head != tmp)
-			{
-				ft_ra(head);
-				// sleep(5);
-				// printf("head->data: %d\n",(*head)->data);
-			}
-			ft_pb(head, stack_b);
-			tmp = *head;
-			tail = (*head)->prev;
-			continue ;
-		}
-		else if (tail->data == max || tail->data == min)
-		{
-			while (*head != tail)
-				ft_rra(head);
-			ft_pb(head, stack_b);
-			tmp = *head;
-			tail = (*head)->prev;
-			continue ;
-		}
-		tmp = tmp->next;
-		tail = tail->prev;
-	}
-	if (tmp->data == max || tmp->data == min)
-	{
-		while (*head != tmp)
-			ft_pb(head, stack_b);
-	}
-	ft_sort_three_elt(head);
-	ft_pa(head, stack_b);
-	if ((*head)->data == max)
-	{
-		ft_ra(head);
-		ft_pa(head, stack_b);
+		while (*(src->head) != src->tmp)
+			ft_ra(src->head);
 	}
 	else
 	{
-		ft_pa(head, stack_b);
-		ft_ra(head);
+		while (*(src->head) != src->tail)
+			ft_rra(src->head);
 	}
+	ft_pb(src->head, src->stack_b);
+	src->tmp = *(src->head);
+	src->tail = (*(src->head))->prev;
+}
+
+void	ft_help(t_struct *src)
+{
+	if (src->tmp->data == src->max || src->tmp->data == src->min)
+	{
+		while (*(src->head) != src->tmp)
+			ft_pb(src->head, src->stack_b);
+	}
+	ft_sort_three_elt(src->head);
+	ft_pa(src->head, src->stack_b);
+	if ((*(src->head))->data == src->max)
+	{
+		ft_ra(src->head);
+		ft_pa(src->head, src->stack_b);
+	}
+	else
+	{
+		ft_pa(src->head, src->stack_b);
+		ft_ra(src->head);
+	}	
+}
+
+void	ft_sort_five_elt(t_cir_dlst **head, t_cir_dlst **stack_b)
+{
+	t_struct	var;
+
+	var = ft_initize(head, stack_b);
+	while (var.tmp != var.tail)
+	{
+		if (var.tmp->data == var.max || var.tmp->data == var.min)
+		{
+			ft_push_min_max(&var, 0);
+			continue ;
+		}
+		else if (var.tail->data == var.max || var.tail->data == var.min)
+		{
+			ft_push_min_max(&var, 1);
+			continue ;
+		}
+		var.tmp = var.tmp->next;
+		var.tail = var.tail->prev;
+	}
+	ft_help(&var);
 }
