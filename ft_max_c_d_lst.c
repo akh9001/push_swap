@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_max_c_d_lst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 21:01:53 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/29 19:49:43 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/07/31 22:12:32 by asmaa-kh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ void	ft_sort_three_elt(t_cir_dlst **head)
 	int	max;
 
 	max = ft_max_circulary_dlst(head);
-	// printf("max = %d\n", max);
+	if ((*head)->prev->prev == *head)
+	{
+		if ((*head)->data > (*head)->next->data)
+		ft_sa(*head);
+		return ;
+	}
 	if ((*head)->data == max)
 		ft_ra(head);
 	else if ((*head)->prev->data != max)
