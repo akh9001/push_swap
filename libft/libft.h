@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:38:40 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/17 19:43:36 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/08/12 22:38:49 by asmaa-kh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,5 @@ void				ft_cer_dlstadd_back(t_cir_dlst **head, t_cir_dlst *new);
 void				ft_cer_dlstdelone(t_cir_dlst *lst, void (*del)(void*));
 void				ft_cer_dlstclear(t_cir_dlst **lst);
 void				ft_cer_dlstprint(t_cir_dlst *lst);
+int					ft_cer_dlst_size(t_cir_dlst *head);
 #endif

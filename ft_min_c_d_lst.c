@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_min_c_d_lst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 18:44:46 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/28 18:46:45 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/08/17 03:05:13 by asmaa-kh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,22 @@ int	ft_min_circulary_dlst(t_cir_dlst **head)
 	{
 		if (tmp->data < min)
 			min = tmp->data;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+int	ft_id_min_circulary_dlst(t_cir_dlst **head)
+{
+	int			min;
+	t_cir_dlst	*tmp;
+
+	min = (*head)->id;
+	tmp = (*head)->next;
+	while (tmp != *head)
+	{
+		if (tmp->id < min)
+			min = tmp->id;
 		tmp = tmp->next;
 	}
 	return (min);

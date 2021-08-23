@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   circular_db_lst.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:12:12 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/17 19:46:59 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/08/12 22:39:48 by asmaa-kh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,16 +124,41 @@ void	ft_cer_dlstprint(t_cir_dlst *lst)
 	if (lst == NULL)
 		return ;
 	tmp = lst;
+	num = ft_itoa(tmp->id);
+	ft_putstr_fd(num, 1);
+	ft_putstr_fd(" ", 1);
+	free (num);
 	num = ft_itoa(tmp->data);
 	ft_putendl_fd(ft_itoa(tmp->data), 1);
 	free (num);
 	tmp = tmp->next;
 	while (tmp != lst)
 	{
+		num = ft_itoa(tmp->id);
+		ft_putstr_fd(num, 1);
+		ft_putstr_fd(" ", 1);
+		free (num);
 		num = ft_itoa(tmp->data);
 		ft_putendl_fd(num, 1);
 		free (num);
 		num = NULL;
 		tmp = tmp->next;
 	}
+}
+
+int	ft_cer_dlst_size(t_cir_dlst *head)
+{
+	t_cir_dlst	*tmp;
+	int			len;
+	
+	if (!head)
+		return (0); 
+	tmp = head->next;
+	len = 1;
+	while (tmp != head)
+	{
+		len++;
+		tmp = tmp->next;
+	}
+	return (len);
 }
