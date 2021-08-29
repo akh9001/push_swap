@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   circular_db_lst.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:12:12 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/08/12 22:39:48 by asmaa-kh         ###   ########.fr       */
+/*   Updated: 2021/08/28 16:47:14 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void	ft_cer_dlstprint(t_cir_dlst *lst)
 	ft_putstr_fd(" ", 1);
 	free (num);
 	num = ft_itoa(tmp->data);
-	ft_putendl_fd(ft_itoa(tmp->data), 1);
+	ft_putendl_fd(num, 1);
 	free (num);
 	tmp = tmp->next;
 	while (tmp != lst)

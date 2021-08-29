@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:42:23 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/08/18 03:57:20 by asmaa-kh         ###   ########.fr       */
+/*   Updated: 2021/08/29 14:46:53 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 		ft_sort_three_elt(&stack_a);
 	else if (argc <= 6)
 		ft_sort_five_elt(&stack_a, &stack_b);
-	else if (argc <= 101)
+	else// if (argc <= 101)
 		ft_launch_sort_algo(&stack_a, &stack_b, argc - 1);
 		
 	// ft_putendl_fd("\n####stack A####\n", 1);

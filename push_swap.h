@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:41:54 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/08/17 03:03:53 by asmaa-kh         ###   ########.fr       */
+/*   Updated: 2021/08/29 16:19:02 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_struct
 	t_cir_dlst	*tmp;
 	t_cir_dlst	*tail;
 	int			min;
+	int			mid;
 	int			max;
 	int			n;
 	int			npush;

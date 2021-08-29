@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_main_sort_alg.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asmaa-kh <asmaa-kh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 19:22:56 by asmaa-kh          #+#    #+#             */
-/*   Updated: 2021/08/18 04:02:02 by asmaa-kh         ###   ########.fr       */
+/*   Updated: 2021/08/29 16:19:50 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static t_struct	ft_initize(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 	var.npush = var.n + 1;
 	var.min = ft_id_min_circulary_dlst(head);
 	var.max = var.min + var.n;
+	var.mid = (var.min + var.max) / 2;
 	var.tmp = *head;
 	var.tail = (*head)->prev;
 	return (var);

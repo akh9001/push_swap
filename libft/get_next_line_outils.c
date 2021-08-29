@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_error.c                                   :+:      :+:    :+:   */
+/*   get_next_line_outils.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 16:14:12 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/08/29 15:37:03 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/08/28 18:40:01 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/08/28 18:42:37 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_check_dup_num(t_cir_dlst *stack, int num)
+int	ft_check_tmp(char *tmp, char **line, char **rest, char *buf)
 {
-	t_cir_dlst	*tmp;
+	char	*tp;
 
-	if (!stack)
-		return (0);
-	tmp = stack;
-	if (tmp->data == num)
-		return (1);
-	tmp = tmp->next;
-	while (tmp != stack)
-	{
-		if (tmp->data == num)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
-}
-// I should also free stack_b !!!
-void	ft_exit(t_cir_dlst **stack_a, int **arr)
-{
-	ft_putendl_fd("ERROR", 2);
-	ft_cer_dlstclear(stack_a);
-	free(*arr);
-	exit(1);
+	*tmp = '\0';
+	*line = ft_strdup(*rest);
+	if (!*line)
+		return (-1);
+	tp = *rest;
+	*rest = ft_strdup(tmp + 1);
+	if (!*rest)
+		return (-1);
+	ft_safe_free(tp);
+	ft_safe_free(buf);
+	return (1);
 }
