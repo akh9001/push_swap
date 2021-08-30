@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 19:22:56 by asmaa-kh          #+#    #+#             */
-/*   Updated: 2021/08/29 16:19:50 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/08/30 16:22:13 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ static t_struct	ft_initize(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 
 	var.head = head;
 	var.stack_b = stack_b;
-	var.n = (size - 5) / 4;
+	if (size > 100)
+		var.n = (size - 5) / 5;
+	else
+		var.n = (size - 5) / 3;
 	var.npush = var.n + 1;
 	var.min = ft_id_min_circulary_dlst(head);
 	var.max = var.min + var.n;
@@ -36,6 +39,8 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 	if (var.tmp->id >= var.min && var.tmp->id <= var.max)
 	{
 		ft_pb(var.head, var.stack_b);
+		if (((*var.stack_b)->next != *var.stack_b) && ((*var.stack_b)->id < var.mid))
+				ft_rb(var.stack_b);
 		var.tmp = *var.head;
 		var.tail = (*var.head)->prev;
 		var.npush--;
@@ -44,6 +49,8 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 	{
 		ft_rra(var.head);
 		ft_pb(var.head, var.stack_b);
+		if (((*var.stack_b)->next != *var.stack_b) && ((*var.stack_b)->id < var.mid))
+				ft_rb(var.stack_b);
 		var.tmp = *var.head;
 		var.tail = (*var.head)->prev;
 		var.npush--;
@@ -61,6 +68,8 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 			while (*(var.head) != var.tmp)
 				ft_ra(var.head);
 			ft_pb(var.head, var.stack_b);
+			if (((*var.stack_b)->next != *var.stack_b) && ((*var.stack_b)->id < var.mid))
+				ft_rb(var.stack_b);
 			var.tmp = *var.head;
 			var.tail = (*var.head)->prev;
 			var.npush--;
@@ -71,6 +80,8 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 			while (*(var.head) != var.tail)
 				ft_rra(var.head);
 			ft_pb(var.head, var.stack_b);
+			if (((*var.stack_b)->next != *var.stack_b) && ((*var.stack_b)->id < var.mid))
+				ft_rb(var.stack_b);
 			var.tmp = *var.head;
 			var.tail = (*var.head)->prev;
 			var.npush--;
