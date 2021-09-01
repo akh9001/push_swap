@@ -94,10 +94,10 @@ arg=$(ruby -e "puts (1..5).to_a.shuffle.join(' ')" 2> /dev/null)
 
 echo "100 random values"
 	echo "_________________________________________"
-	bash push_swap_tester/tester.sh . 100 10
+	bash tester/tester.sh . 100 10
 	echo "expected [700=>5, 900=>4, 1100=>3, 1300=>2, 1500=>1] calculate : `wc -l cmd`"
 
 
 echo "500 random values"
-	bash push_swap_tester/tester.sh . 500 10
+	bash tester/tester.sh . 500 10
 	echo "expected[5500=>5, 7000=>4, 8500=>3, 10000=>2, 15000=>1] calculate : `wc -l cmd`"

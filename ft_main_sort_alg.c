@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 19:22:56 by asmaa-kh          #+#    #+#             */
-/*   Updated: 2021/08/30 16:22:13 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/01 16:39:56 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,23 @@ static t_struct	ft_initize(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 	return (var);
 }
 
+int	ft_get_next_num_pos(t_cir_dlst *head, int max, int min)
+{
+	t_cir_dlst	*tmp;
+	int			i;
+
+	tmp = head;
+	i = 0;
+	while (tmp->id < min || tmp->id > max)
+	{
+		// printf("id %d, max %d, min %d\n", tmp->id, max, min);
+		tmp = tmp->next;
+		i++;
+	}
+	// ft_putnbr_fd(i, 1);
+	return (i);
+}
+
 void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 {
 	t_struct	var;
@@ -40,7 +57,12 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 	{
 		ft_pb(var.head, var.stack_b);
 		if (((*var.stack_b)->next != *var.stack_b) && ((*var.stack_b)->id < var.mid))
+		{
+			if ((var.npush - 1) && ft_get_next_num_pos(*head, var.max, var.min) < ((size - var.npush - 1) / 2))
+				ft_rr(var.head, var.stack_b);
+			else
 				ft_rb(var.stack_b);
+		}
 		var.tmp = *var.head;
 		var.tail = (*var.head)->prev;
 		var.npush--;
@@ -50,7 +72,12 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 		ft_rra(var.head);
 		ft_pb(var.head, var.stack_b);
 		if (((*var.stack_b)->next != *var.stack_b) && ((*var.stack_b)->id < var.mid))
+		{
+			if ((var.npush - 1) && ft_get_next_num_pos(*head, var.max, var.min) < ((size - var.npush - 1) / 2))
+				ft_rr(var.head, var.stack_b);
+			else
 				ft_rb(var.stack_b);
+		}
 		var.tmp = *var.head;
 		var.tail = (*var.head)->prev;
 		var.npush--;
@@ -69,7 +96,12 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 				ft_ra(var.head);
 			ft_pb(var.head, var.stack_b);
 			if (((*var.stack_b)->next != *var.stack_b) && ((*var.stack_b)->id < var.mid))
+			{
+				if ((var.npush - 1) && ft_get_next_num_pos(*head, var.max, var.min) < ((size - var.npush - 1) / 2))
+					ft_rr(var.head, var.stack_b);
+				else
 				ft_rb(var.stack_b);
+			}
 			var.tmp = *var.head;
 			var.tail = (*var.head)->prev;
 			var.npush--;
@@ -81,7 +113,12 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size)
 				ft_rra(var.head);
 			ft_pb(var.head, var.stack_b);
 			if (((*var.stack_b)->next != *var.stack_b) && ((*var.stack_b)->id < var.mid))
+			{
+				if ((var.npush - 1) && ft_get_next_num_pos(*head, var.max, var.min) < ((size - var.npush - 1) / 2))
+					ft_rr(var.head, var.stack_b);
+				else
 				ft_rb(var.stack_b);
+			}
 			var.tmp = *var.head;
 			var.tail = (*var.head)->prev;
 			var.npush--;
