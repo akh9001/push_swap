@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 19:22:56 by asmaa-kh          #+#    #+#             */
-/*   Updated: 2021/09/12 19:27:13 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/12 19:41:46 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_get_next_num_pos_satck_b(t_cir_dlst *head, int num)
 
 	tmp = head;
 	i = 0;
-	while (tmp->id < min || tmp->id > max)
+	while (tmp->id == num)
 	{
 		// printf("id %d, max %d, min %d\n", tmp->id, max, min);
 		tmp = tmp->next;
@@ -234,7 +234,10 @@ void	ft_push_back_right_num(t_cir_dlst **stack_a, t_cir_dlst **stack_b, int num)
 			{
 				ft_pa(stack_a, stack_b);
 				//t9adri fhad la9ta t5admi bi rr
-				ft_ra(stack_a);	
+				if (ft_get_next_num_pos_satck_b(*stack_b, num) <= (ft_cer_dlst_size(*stack_b) / 2))
+					ft_rr(stack_a, stack_b);
+				else
+					ft_ra(stack_a);	
 				head = *stack_b;
 				tail = head->prev;
 				continue ;
