@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:41:54 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/08/29 16:19:02 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/02 13:05:49 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ typedef struct s_struct
 	int			npush;
 }				t_struct;
 
+typedef struct	s_pair
+{
+	int			x;
+	int			y;
+}				t_pair;
 
 void	ft_swap(t_cir_dlst *stack);
 void	ft_ss(t_cir_dlst *stack_a, t_cir_dlst *stack_b);

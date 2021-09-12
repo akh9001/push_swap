@@ -99,5 +99,5 @@ echo "100 random values"
 
 
 echo "500 random values"
-	bash tester/tester.sh . 500 10
+	bash  tester/tester.sh . 500 10
 	echo "expected[5500=>5, 7000=>4, 8500=>3, 10000=>2, 15000=>1] calculate : `wc -l cmd`"
