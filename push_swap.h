@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:41:54 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/02 13:05:49 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/13 12:00:07 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,9 @@ int		ft_is_sorted(t_cir_dlst *head);
 void	ft_quick_sort(int arr[], int low, int high);
 void	ft_launch_sort_algo(t_cir_dlst **head, t_cir_dlst **stack_b, int size);
 int		ft_id_min_circulary_dlst(t_cir_dlst **head);
+void	ft_pb_head_rb_elt_greater_than_mid(t_struct *var, int size);
+void	ft_pb_tail_rb_elt_greater_than_mid(t_struct *var, int size);
+int		ft_get_next_num_pos_cpy(t_struct var, int size);
+int		ft_get_next_num_pos_satck_b(t_cir_dlst *head, int num);
+void	ft_push_head_stack(t_struct *var, int size);
 #endif
