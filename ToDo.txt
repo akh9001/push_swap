@@ -2,4 +2,7 @@
 
 *** Chaba, rak badalti fi ft_atoi !!!!
 
-###
+###Dont forget to :
+
+	ft_check_error.c : // I should also free stack_b !!!(i dont know if i should free it)
+	 => you should check when you use exit function, so you can make up your mind ;)!

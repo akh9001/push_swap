@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 11:55:58 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/13 12:17:28 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/14 16:22:31 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_get_next_num_pos_satck_b(t_cir_dlst *head, int num)
 
 	tmp = head;
 	i = 0;
-	while (tmp->id == num)
+	while (tmp->id != num)
 	{
 		tmp = tmp->next;
 		i++;

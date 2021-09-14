@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 12:14:42 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/17 16:17:05 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:54:29 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ void	ft_push(t_cir_dlst **stack_dst, t_cir_dlst **stack_src)
 	t_cir_dlst	*first_elt;
 	t_cir_dlst	*last_elt;
 
-/*
-** Add first elt of stack B to stack A :  
-*/
 	if (*stack_src)
 	{
 		first_elt = *stack_src;
@@ -31,15 +28,12 @@ void	ft_push(t_cir_dlst **stack_dst, t_cir_dlst **stack_src)
 			first_elt->next->prev = last_elt;
 			last_elt->next = first_elt->next;
 			*stack_src = first_elt->next;
-		 }
-/*
-** Add first elt of stack B to stack A :  
-*/		
+		}	
 		if (*stack_dst)
 		{
 			last_elt = (*stack_dst)->prev;
-			first_elt->next =  *stack_dst;
-			first_elt->prev =  last_elt;
+			first_elt->next = *stack_dst;
+			first_elt->prev = last_elt;
 			last_elt->next = first_elt;
 			(*stack_dst)->prev = first_elt;
 			*stack_dst = first_elt;

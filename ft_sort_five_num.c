@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 16:55:47 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/08/28 16:16:13 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:51:16 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ void	ft_sort_five_elt(t_cir_dlst **head, t_cir_dlst **stack_b)
 	t_struct	var;
 
 	var = ft_initize(head, stack_b);
-	while (var.tmp != var.tail && !(var.tmp->next == var.tail && var.tail->next == var.tmp))
+	while (var.tmp != var.tail
+		&& !(var.tmp->next == var.tail && var.tail->next == var.tmp))
 	{
 		if (var.tmp->data == var.max || var.tmp->data == var.min)
 		{

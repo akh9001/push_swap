@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 11:01:06 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/17 16:22:04 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:50:13 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_swap(t_cir_dlst *stack)
 {
 	int	tmp;
-	
+
 	if (!stack || stack == stack->next)
 		return ;
 	tmp = stack->data;

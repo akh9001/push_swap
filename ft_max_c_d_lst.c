@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 21:01:53 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/08/28 16:15:36 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:55:59 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_sort_three_elt(t_cir_dlst **head)
 	if ((*head)->prev->prev == *head)
 	{
 		if ((*head)->data > (*head)->next->data)
-		ft_sa(*head);
+			ft_sa(*head);
 		return ;
 	}
 	if ((*head)->data == max)

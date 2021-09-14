@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 16:14:36 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/08/29 16:09:28 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:57:43 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void	ft_index_list(int *arr, int argc, t_cir_dlst *head)
 		tmp = tmp->next;
 	}
 }
-// jma3t les deux conditions fi if wa7da, i didn tested yet!!
+
 int	*ft_fill_stack(int argc, char **argv, t_cir_dlst **a, t_cir_dlst **b)
 {
 	int	i;
 	int	num;
 	int	*arr;
-	
+
 	i = 0;
 	*a = NULL;
 	*b = NULL;
@@ -55,7 +55,7 @@ int	*ft_fill_stack(int argc, char **argv, t_cir_dlst **a, t_cir_dlst **b)
 		if (!ft_check_int_range(argv[i], &num) && !ft_check_dup_num(*a, num))
 		{
 			ft_cer_dlstadd_back(a, ft_cer_dlstnew(num, 0));
-			arr[i -1] = num;
+			arr[i - 1] = num;
 		}
 		else
 			ft_exit(a, &arr);
