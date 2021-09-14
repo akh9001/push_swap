@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 20:19:00 by asmaa-kh          #+#    #+#             */
-/*   Updated: 2021/08/28 16:16:46 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/14 18:52:16 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void	ft_quick_sort(int arr[], int low, int high)
 	{
 		pi = ft_partion(arr, low, high);
 		ft_quick_sort(arr, low, pi - 1);
-		ft_quick_sort(arr, pi + 1, high);	
+		ft_quick_sort(arr, pi + 1, high);
 	}
 }
