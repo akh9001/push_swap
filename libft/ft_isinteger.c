@@ -39,7 +39,7 @@ int	ft_check_int_range(char *str, int *number)
 	if (ft_isinteger(str))
 		return (1);
 	num = ft_atoi(str);
-	if ( num > 2147483647 || num < -2147483648 || (num == -1 && *str != '-'))
+	if (num > 2147483647 || num < -2147483648 || (num == -1 && *str != '-'))
 		return (1);
 	*number = num;
 	return (0);

@@ -6,9 +6,16 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 05:34:05 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/07/17 18:59:42 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/15 16:00:47 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int	ft_replace_tenary(int sign)
+{
+	if (sign < 0)
+		return (0);
+	return (-1);
+}
 
 long long	ft_atoi(const char *str)
 {
@@ -16,7 +23,7 @@ long long	ft_atoi(const char *str)
 	int				signe;
 	unsigned long	x;
 
-	s = (char*)str;
+	s = (char *)str;
 	signe = 1;
 	x = 0;
 	while ((*s >= 8 && *s <= 13) || *s == 32)
@@ -33,7 +40,7 @@ long long	ft_atoi(const char *str)
 		x = x * 10 + (*s - '0');
 		s++;
 		if (x > 9223372036854775807)
-			return (signe < 0 ? 0 : -1);
+			return (ft_replace_tenary(signe));
 	}
 	return (signe * x);
 }
