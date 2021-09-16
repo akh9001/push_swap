@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 16:14:36 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/14 13:57:43 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/15 17:59:10 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	*ft_fill_stack(int argc, char **argv, t_cir_dlst **a, t_cir_dlst **b)
 			arr[i - 1] = num;
 		}
 		else
-			ft_exit(a, &arr);
+			ft_exit(a, b, &arr);
 	}
 	ft_index_list(arr, argc, *a);
 	return (arr);

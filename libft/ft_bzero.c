@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 16:17:52 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/16 19:04:11 by akhalidy         ###   ########.fr       */
+/*   Created: 2019/10/15 19:32:12 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/09/16 12:16:37 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-	t_cir_dlst	*stack_a;
-	t_cir_dlst	*stack_b;
+	int	t;
+	int	r;
+	int	k;
 
-	if (argc <= 1)
-		return (0);
-	ft_fill_stack(argc, argv, &stack_a, &stack_b);
-	ft_read_and_execute_instruction(&stack_a, &stack_b);
-	ft_cer_dlstclear(&stack_a);
-	ft_cer_dlstclear(&stack_b);
-	return (0);
+	if (n)
+	{
+		t = n / sizeof(long);
+		r = n % sizeof(long);
+		k = 0;
+		while (t--)
+			((long *)s)[k++] = 0;
+		while (r--)
+			((char *)s)[k * sizeof(long) + r] = 0;
+	}
 }

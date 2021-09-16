@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 16:17:52 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/16 19:04:11 by akhalidy         ###   ########.fr       */
+/*   Created: 2021/09/16 19:53:51 by akhalidy          #+#    #+#             */
+/*   Updated: 2021/09/16 19:54:04 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *s1)
 {
-	t_cir_dlst	*stack_a;
-	t_cir_dlst	*stack_b;
+	char	*str;
+	size_t	l;
 
-	if (argc <= 1)
-		return (0);
-	ft_fill_stack(argc, argv, &stack_a, &stack_b);
-	ft_read_and_execute_instruction(&stack_a, &stack_b);
-	ft_cer_dlstclear(&stack_a);
-	ft_cer_dlstclear(&stack_b);
-	return (0);
+	if (!s1)
+		return (NULL);
+	l = ft_strlen(s1);
+	str = (char *)malloc(l + 1);
+	if (str)
+		ft_strlcpy(str, s1, l + 1);
+	return (str);
 }

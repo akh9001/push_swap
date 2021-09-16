@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:42:23 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/13 11:52:53 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/16 19:48:21 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ int	main(int argc, char **argv)
 {
 	t_cir_dlst	*stack_a;
 	t_cir_dlst	*stack_b;
+	int			*arr;
 
 	if (argc <= 1)
 		return (0);
-	ft_fill_stack(argc, argv, &stack_a, &stack_b);
+	arr = ft_fill_stack(argc, argv, &stack_a, &stack_b);
 	if (!ft_is_sorted(stack_a))
 		return (0);
 	if (argc <= 4)
@@ -28,5 +29,8 @@ int	main(int argc, char **argv)
 		ft_sort_five_elt(&stack_a, &stack_b);
 	else
 		ft_launch_sort_algo(&stack_a, &stack_b, argc - 1);
+	ft_cer_dlstclear(&stack_a);
+	ft_cer_dlstclear(&stack_b);
+	free(arr);
 	return (0);
 }

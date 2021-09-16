@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:41:54 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/14 18:18:21 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/16 18:59:54 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_rra(t_cir_dlst **stack);
 void	ft_rrb(t_cir_dlst **stack);
 int		*ft_fill_stack(int argc, char **argv, t_cir_dlst **a, t_cir_dlst **b);
 int		ft_check_dup_num(t_cir_dlst *stack, int num);
-void	ft_exit(t_cir_dlst **stack_a, int **arr);
+void	ft_exit(t_cir_dlst **stack_a, t_cir_dlst **stack_b, int **arr);
 int		ft_max_circulary_dlst(t_cir_dlst **head);
 void	ft_sort_three_elt(t_cir_dlst **head);
 void	ft_sort_five_elt(t_cir_dlst **head, t_cir_dlst **stack_b);
@@ -68,4 +68,11 @@ int		ft_get_next_num_pos_cpy(t_struct var, int size);
 int		ft_get_next_num_pos_satck_b(t_cir_dlst *head, int num);
 void	ft_push_head_stack(t_struct *var, int size);
 void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size);
+
+/*
+**	Checker Functions
+*/
+
+void	ft_read_and_execute_instruction(t_dcl **a, t_dcl **b);
+
 #endif

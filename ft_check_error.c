@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 16:14:12 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/14 13:58:50 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/15 17:58:29 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ int	ft_check_dup_num(t_cir_dlst *stack, int num)
 }
 
 // I should also free stack_b !!!
-void	ft_exit(t_cir_dlst **stack_a, int **arr)
+void	ft_exit(t_cir_dlst **stack_a, t_cir_dlst **stack_b, int **arr)
 {
 	ft_putendl_fd("ERROR", 2);
 	ft_cer_dlstclear(stack_a);
+	ft_cer_dlstclear(stack_b);
 	free(*arr);
 	exit(1);
 }
