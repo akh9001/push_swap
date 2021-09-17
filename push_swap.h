@@ -6,7 +6,7 @@
 /*   By: akhalidy <akhalidy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 13:41:54 by akhalidy          #+#    #+#             */
-/*   Updated: 2021/09/16 18:59:54 by akhalidy         ###   ########.fr       */
+/*   Updated: 2021/09/17 18:59:17 by akhalidy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void	ft_sa(t_cir_dlst *stack);
 void	ft_sb(t_cir_dlst *stack);
 void	ft_ra(t_cir_dlst **stack);
 void	ft_rb(t_cir_dlst **stack);
-void	ft_ra(t_cir_dlst **stack);
-void	ft_rb(t_cir_dlst **stack);
 void	ft_rra(t_cir_dlst **stack);
 void	ft_rrb(t_cir_dlst **stack);
 int		*ft_fill_stack(int argc, char **argv, t_cir_dlst **a, t_cir_dlst **b);
@@ -74,5 +72,16 @@ void	ft_sorting_function(t_cir_dlst **head, t_cir_dlst **stack_b, int size);
 */
 
 void	ft_read_and_execute_instruction(t_dcl **a, t_dcl **b);
+void	ft_rrr_bonus(t_cir_dlst **stack_a, t_cir_dlst **stack_b);
+void	ft_rra_bonus(t_cir_dlst **stack);
+void	ft_rrb_bonus(t_cir_dlst **stack);
+void	ft_pa_bonus(t_cir_dlst **stack_dst, t_cir_dlst **stack_src);
+void	ft_pb_bonus(t_cir_dlst **stack_dst, t_cir_dlst **stack_src);
+void	ft_sa_bonus(t_cir_dlst *stack);
+void	ft_sb_bonus(t_cir_dlst *stack);
+void	ft_ra_bonus(t_cir_dlst **stack);
+void	ft_rb_bonus(t_cir_dlst **stack);
+void	ft_rr_bonus(t_cir_dlst **stack_a, t_cir_dlst **stack_b);
+void	ft_ss_bonus(t_cir_dlst *stack_a, t_cir_dlst *stack_b);
 
 #endif
